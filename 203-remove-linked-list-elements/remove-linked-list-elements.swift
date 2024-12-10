@@ -10,24 +10,26 @@
  */
 class Solution {
     func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
-        var currentNode: ListNode? = head
-        var prevNode: ListNode? = nil
-        var head = head
-        while (currentNode != nil) {
-            if currentNode?.val == val {
-                if currentNode === head {
-                    currentNode = currentNode?.next
-                    head = currentNode
-                } else {
-                    prevNode?.next = currentNode?.next
-                    currentNode = currentNode?.next
-                }
+        var currentPointer = head
+    var previousPointer: ListNode? = nil
+    var headPointer: ListNode? = head
+    
+    while currentPointer != nil {
+        if currentPointer?.val == val {
+            if currentPointer === headPointer {
+                currentPointer = currentPointer?.next
+                headPointer = currentPointer
+               
             } else {
-                
-                prevNode = currentNode
-                currentNode = currentNode?.next
+                previousPointer?.next = currentPointer?.next
+                currentPointer = currentPointer?.next
             }
+        } else {
+            previousPointer = currentPointer
+            currentPointer = currentPointer?.next
         }
-        return head
+    }
+
+    return headPointer
     }
 }
