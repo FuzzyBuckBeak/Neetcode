@@ -12,7 +12,7 @@ class Solution {
                 firstPointer += 1
                 lastPointer -= 1
             }
-            print(arr)
+
             result.append(String(arr))
             
         }
