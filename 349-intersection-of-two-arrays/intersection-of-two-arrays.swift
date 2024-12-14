@@ -7,7 +7,7 @@ class Solution {
         }
 
         for num in nums2 {
-            if hashMap[num] == 1 {
+            if let _ = hashMap[num] {
                 result.append(num)
                 hashMap[num] = nil // Ensure each element is added only once
             }
