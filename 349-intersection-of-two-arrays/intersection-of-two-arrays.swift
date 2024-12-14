@@ -9,7 +9,7 @@ class Solution {
         for num in nums2 {
             if hashMap[num] == 1 {
                 result.append(num)
-                hashMap[num] = 0 // Ensure each element is added only once
+                hashMap[num] = nil // Ensure each element is added only once
             }
         }
         return result
