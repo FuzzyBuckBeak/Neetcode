@@ -1,0 +1,30 @@
+class Solution {
+    func search(_ nums: [Int], _ target: Int) -> Int {
+        var left = 0
+        var right = nums.count - 1
+        
+        while left <= right {
+            var middle = (left + right) / 2
+            if target == nums[middle] { return middle }
+            else if target > nums[middle] {
+            left = middle + 1
+            } else {
+                right = middle - 1
+            }
+        }
+        return -1
+        //return binarySearch(start: 0, end: nums.count - 1, nums: nums, target: target)
+    }
+
+    func binarySearch(start: Int, end: Int, nums: [Int], target: Int) -> Int {
+        if start > end { return -1 }
+        var middle = (start + end) / 2
+        
+        if target == nums[middle] { return middle }
+        if target > nums[middle] {
+            return binarySearch(start: middle + 1, end: end, nums: nums, target: target)
+        } else {
+            return binarySearch(start: start, end: middle - 1, nums: nums, target: target)
+        }
+    }
+}
