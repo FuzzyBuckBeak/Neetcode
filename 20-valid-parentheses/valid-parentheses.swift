@@ -7,14 +7,14 @@ class Solution {
         } else {
                 switch char {
                 case ")": let value = stack.last
-                    if value == "(" { stack.removeLast() } else { stack.append(char)}
+                    if value == "(" { stack.removeLast() } else { return false }
                     
                     
                 case "]": let value = stack.last
-                    if value == "[" { stack.removeLast() } else { stack.append(char)}
+                    if value == "[" { stack.removeLast() } else { return false }
                     
                 case "}": let value = stack.last
-                    if value == "{" { stack.removeLast() } else { stack.append(char)}
+                    if value == "{" { stack.removeLast() } else { return false }
                     
                     
                 default: break
